@@ -4,7 +4,6 @@
 
 - Enlaces directos de Spotify.  
 - Tu cuenta de Spotify (canciones, álbumes o playlists guardadas).  
-- Enlaces directos de Deezer
 
 Luego mapea las pistas por ISRC y descarga en **FLAC** o **MP3 320 kbps** en carpetas organizadas.
 
@@ -18,10 +17,7 @@ Este proyecto requiere:
 - **requests**: solicitudes HTTP.  
 - **PyYAML**: carga de configuración YAML.  
 - **deemix**: CLI para descargar desde Deezer.  
-- **python-dotenv** (opcional): variables de entorno en `.env`.+**  
-
-
-Para instalar todas las librerías, puedes usar el archivo `requirements.txt`:
+- **python-dotenv** (opcional): variables de entorno en `.env`.
 
 ```bash
 pip install -r requirements.txt
@@ -121,7 +117,20 @@ download_failure,<url>,CalledProcessError...
 - Mantén **`config.yml`** en tu `.gitignore`.  
 - Para colaborar, usa **`example_config.yml`** como plantilla.  
 - Revisa y limpia **`errors.csv`** tras cada ejecución masiva.
+
 ---
+
+## ⚖️ Términos y responsabilidad
+
+Este software es de **uso personal** y se proporciona "tal cual". El autor no asume responsabilidad alguna por:
+
+- El uso que se haga de los contenidos descargados.
+- El cumplimiento de los **Términos de Servicio** de Spotify y Deezer.
+
+Asegúrate de utilizar esta herramienta conforme a la legislación vigente y las políticas de ambas plataformas.
+
+---
+
 ## 🤖 Generado con ChatGPT
 
 Parte del código y la documentación de este proyecto fueron generados con ayuda de ChatGPT de OpenAI.
