@@ -19,3 +19,5 @@ __pycache__/
 # Logs
 *.log
 .cache
+downloaded.csv
+.spotify-token-cache
