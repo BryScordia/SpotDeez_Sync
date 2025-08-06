@@ -109,18 +109,22 @@ def download_deezer_link(link, fmt, subfolder=None):
         bitrate = 'FLAC' if rfmt == 'flac' else '320'
         cmd = [sys.executable, '-m', 'deemix', '--bitrate', bitrate, '--path', parent_dest, link]
         subprocess.run(cmd, check=True)
-    # descarga con fallback
+    # descarga con fallback y renombrado
     try:
         try_download(fmt)
-        # renombrar carpeta "Artista - Álbum" a solo "Álbum"
+        # renombrar carpeta de álbum sin prefijo de artista
         if album_title and artist:
-            orig_folder = os.path.join(parent_dest, safe(f"{artist} - {album_title}"))
-            new_folder = os.path.join(parent_dest, safe(album_title))
-            try:
-                if os.path.isdir(orig_folder) and not os.path.exists(new_folder):
-                    os.rename(orig_folder, new_folder)
-            except Exception as e:
-                log_error('rename_failure', orig_folder, str(e))
+            # buscamos carpeta generada por Deemix
+            for entry in os.listdir(parent_dest):
+                if entry.lower().startswith(f"{safe(artist).lower()} - "):
+                    orig = os.path.join(parent_dest, entry)
+                    new = os.path.join(parent_dest, safe(album_title))
+                    try:
+                        if os.path.isdir(orig) and not os.path.exists(new):
+                            os.rename(orig, new)
+                    except Exception as e:
+                        log_error('rename_failure', orig, str(e))
+                    break
         log_success(link)
     except subprocess.CalledProcessError as e:
         err = str(e)
