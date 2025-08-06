@@ -1,0 +1,15 @@
+# example_config.yml
+# ————————————————
+#  1) Renombra este archivo a `config.yml`
+#  2) Elimina el prefijo "example_" del nombre
+#  3) Sustituye los valores entre comillas por tus credenciales y rutas locales
+# ————————————————
+
+spotify:
+  client_id:     "TU_CLIENT_ID"
+  client_secret: "TU_CLIENT_SECRET"
+  redirect_uri:  "TU_REDIRECT_URI"
+
+paths:
+  deezer_flac: "/ruta/a/tu/deezer_flac"
+  deezer_mp3:  "/ruta/a/tu/deezer_mp3"

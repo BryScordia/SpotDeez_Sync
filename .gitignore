@@ -1,0 +1,21 @@
+# Configuración sensible
+config.yml
+
+# Entornos virtuales
+venv/
+.venv/
+
+# Librerías instaladas “vendored” 
+deemix/
+
+# Cachés de Python y de tu sistema
+__pycache__/
+.cache/
+
+# Salidas de audio (si usas esas carpetas para FLAC/MP3)
+/deezer_flac/
+/deezer_mp3/
+
+# Logs
+*.log
+.cache
